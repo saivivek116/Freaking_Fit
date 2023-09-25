@@ -1,0 +1,56 @@
+/* Style for the DietPlan items */
+.diet-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.diet-plan-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.diet-plan-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.diet-plan-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.diet-plan-info {
+    flex-grow: 1;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .diet-plan-list {
+        grid-template-columns: 1fr;
+    }
+
+    .diet-plan-item {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+
+    .diet-plan-item img {
+        max-width: 200px;
+        margin-right: 20px;
+    }
+}

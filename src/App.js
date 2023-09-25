@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import Workout from "./pages/Workout";
+import "./style/css/style.css";
+import SignIn from "./pages/signIn";
+import Signup from "./pages/Signup";
+import NotFound from "./pages/NotFound";
+import ForgotPassword from "./pages/ForgotPassword";
+import Community from "./pages/Community";
+import Diet from "./pages/Diet";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/signin" element={<SignIn />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route
+                        path="/forget-password"
+                        element={<ForgotPassword />}
+                    />
+                    <Route
+                        path="/workouts"
+                        element={
+                            <PrivateRoute>
+                                <Workout />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/community"
+                        element={
+                            <PrivateRoute>
+                                <Community />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/diet"
+                        element={
+                            <PrivateRoute>
+                                <Diet />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
-
 export default App;

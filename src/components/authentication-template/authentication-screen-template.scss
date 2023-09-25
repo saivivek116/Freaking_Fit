@@ -1,0 +1,241 @@
+.authentication-page-container {
+    display: flex;
+    height: calc(100vh - 80px);
+    width: 100%;
+
+    .left-container {
+        flex: 1;
+        // background-color: rgb(190, 237, 237);
+        background-image: url("./background3.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media (max-width: 1080px) {
+            display: none;
+        }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .logo {
+            font-size: 64px;
+            font-weight: 700;
+            color: white;
+            margin: 5px;
+        }
+    }
+
+    .right-container {
+        flex: 2;
+
+        .right-content-container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @media (max-width: 1080px) {
+                width: 100%;
+            }
+            .header-text-container {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 0 50px;
+                width: 80%;
+
+                @media (max-width: 1080px) {
+                    padding: 0 25px;
+                }
+
+                .title-text {
+                    display: flex;
+                    margin-bottom: 20px;
+                }
+                .title {
+                    font-size: 48px;
+                    font-weight: 700;
+
+                    @media (max-width: 1080px) {
+                        font-size: 32px;
+                    }
+                }
+
+                .sub-title {
+                    font-size: 24px;
+                    font-weight: 700;
+                }
+            }
+            form {
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 50px;
+                width: 80%;
+
+                @media (max-width: 1080px) {
+                    padding: 0 25px;
+                }
+
+                .textbox-container {
+                    padding: 15px 0;
+
+                    .input-textbox {
+                        margin-top: 12px;
+                        height: 40px;
+                        width: 100%;
+                    }
+                }
+
+                .forgot-password {
+                    text-align: right;
+                    margin-top: 15px;
+                    cursor: pointer;
+                }
+            }
+            .buttons-container {
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 80%;
+
+                @media (max-width: 1080px) {
+                    width: 100%;
+                }
+
+                .item-button {
+                    // flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+
+                    .signup-button {
+                        width: 60%;
+                        height: 40px;
+                        color: white;
+                        background-color: #212529;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 8px;
+                        cursor: pointer;
+                    }
+
+                    .footer-text {
+                        font-size: 20px;
+                        color: #212529;
+                        padding: 20px;
+                        cursor: pointer;
+                    }
+
+                    & .bold {
+                        font-weight: 700;
+                    }
+                }
+            }
+            .footer-container {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                width: 80%;
+
+                .text-container {
+                    display: flex;
+
+                    .sub-title {
+                        font-size: 12px;
+                    }
+
+                    .link-text {
+                        color: violet;
+                        font-size: 16px;
+                        padding-left: 8px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .forgot-password {
+                &-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 100px 25px;
+                }
+
+                &-title-text {
+                    font-size: 32px;
+                    font-weight: 700;
+                    padding: 20px 0;
+                }
+
+                &-sub-title {
+                    font-size: 20px;
+                    font-weight: 600;
+                    padding: 20px 0;
+                }
+
+                &-textbox-container {
+                    padding: 15px 0;
+                    width: 80%;
+                }
+
+                &-input-textbox {
+                    margin-top: 12px;
+                    height: 40px;
+                    width: 100%;
+                }
+
+                &-item-button {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80%;
+                }
+
+                &-signup-button {
+                    width: 60%;
+                    height: 40px;
+                    color: white;
+                    background-color: #212529;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    margin-top: 15px;
+                    font-size: 20px;
+                }
+
+                &-footer-text {
+                    cursor: pointer;
+                    font-size: 18px;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+}
+
+.signup-button {
+    width: 60%;
+    height: 40px;
+    color: white;
+    background-color: #212529;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: auto;
+}
