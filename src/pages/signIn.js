@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import TextInput from "../components/textbox/Textbox";
 import AuthenticationScreenTemplate from "../components/authentication-template/AuthenticationScreenTemplate";
@@ -7,8 +7,9 @@ import credentails from "../credentials";
 import Password from "../components/Password";
 
 const SignIn = (props) => {
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [remember, setRemember] = useState(false);
     const [error, setError] = useState({});
     const navigate = useNavigate();
 
@@ -17,10 +18,18 @@ const SignIn = (props) => {
         pass: "Invalid Password",
     };
 
-    const handleSubmit = (event) => {
+    const rememberCredentials = () => {
+        if (remember) {
+            localStorage.setItem("username", email);
+            localStorage.setItem("password", password);
+        }
+    };
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
         // Find user login info
-        const userData = credentails.find((user) => user.username === username);
+        console.log(credentails);
+        const userData = credentails.find((user) => user.username === email);
         // Compare user info
         if (userData) {
             if (userData.password !== password) {
@@ -28,6 +37,8 @@ const SignIn = (props) => {
                 setError({ name: "pass", message: errors.pass });
             } else {
                 localStorage.setItem("isLoggedIn", true);
+                rememberCredentials();
+                alert("Login successful");
                 navigate("/");
             }
         } else {
@@ -35,6 +46,16 @@ const SignIn = (props) => {
             setError({ name: "uname", message: errors.uname });
         }
     };
+
+    useEffect(() => {
+        const username = localStorage.getItem("username");
+        const password = localStorage.getItem("password");
+        if (username && password) {
+            setEmail(username);
+            setPassword(password);
+            setRemember(true);
+        }
+    }, []);
 
     return (
         <AuthenticationScreenTemplate>
@@ -52,12 +73,11 @@ const SignIn = (props) => {
                         required={true}
                         type="email"
                         onChange={(e) => {
-                            setUsername(e);
+                            setEmail(e);
                         }}
-                        value={username}
+                        value={email}
                     />
                 </div>
-
                 <div className="textbox-container">
                     <div>Password</div>
                     <Password
@@ -70,7 +90,14 @@ const SignIn = (props) => {
                         value={password}
                     />
                 </div>
-
+                <div className="checkbox-container">
+                    <input
+                        type="checkbox"
+                        checked={remember}
+                        onChange={() => setRemember(!remember)}
+                    />
+                    <span className="checkbox-text">Remember me</span>
+                </div>
                 {error.name || error.message ? (
                     <div className="error-message">{error.message}</div>
                 ) : null}

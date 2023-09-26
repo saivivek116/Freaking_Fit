@@ -11,7 +11,6 @@ const TextInput = (props) => {
         onBlur,
         onClick,
     } = props;
-    console.log("this is console");
     return (
         <input
             value={value}

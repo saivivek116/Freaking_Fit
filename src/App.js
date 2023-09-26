@@ -28,25 +28,25 @@ function App() {
                     <Route
                         path="/workouts"
                         element={
-                            <PrivateRoute>
-                                <Workout />
-                            </PrivateRoute>
+                            // <PrivateRoute>
+                            <Workout />
+                            // </PrivateRoute>
                         }
                     />
                     <Route
                         path="/community"
                         element={
-                            <PrivateRoute>
-                                <Community />
-                            </PrivateRoute>
+                            // <PrivateRoute>
+                            <Community />
+                            // </PrivateRoute>
                         }
                     />
                     <Route
                         path="/diet"
                         element={
-                            <PrivateRoute>
-                                <Diet />
-                            </PrivateRoute>
+                            // <PrivateRoute>
+                            <Diet />
+                            // </PrivateRoute>
                         }
                     />
                     <Route

@@ -18,6 +18,10 @@ const Signup = (props) => {
             alert("Passwords do not match, please give matching passwords");
             return;
         }
+        if (password.length <= 8) {
+            alert("Password should be atleast 8 characters long");
+            return;
+        }
         credentails.push({ username: email, password });
         navigate("/signin");
     };
@@ -67,6 +71,11 @@ const Signup = (props) => {
                         }}
                         value={password}
                     />
+                    <div>
+                        <small>
+                            Password should atleast contain 8 characters
+                        </small>
+                    </div>
                 </div>
 
                 <div className="textbox-container">

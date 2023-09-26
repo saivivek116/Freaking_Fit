@@ -14,11 +14,11 @@ function Navbar() {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const location = useLocation();
     const pathname = location.pathname;
-    if (pathname === "/signin" || pathname === "/signup") {
-        return null;
-    }
+    // if (pathname === "/signin" || pathname === "/signup") {
+    //     return null;
+    // }
 
-    const logout = () => {
+    const logout = async () => {
         localStorage.removeItem("isLoggedIn");
         navigate("/");
     };
