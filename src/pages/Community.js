@@ -4,10 +4,8 @@ import Footer from "../components/Footer";
 import "./community.scss";
 function Community() {
     return (
-        <div>
-            <header>
-                <h1>Welcome to Gym Communities!</h1>
-            </header>
+        <div className="community pt-5">
+            <h1>Welcome to Gym Communities!</h1>
             <CommunityCard />
             <Footer />
         </div>

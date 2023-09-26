@@ -61,10 +61,9 @@ function DietItem({ name, imageSrc, description }) {
 
 function Diet() {
     return (
-        <div className="diet-page">
+        <div className="diet-page pt-5">
             <section id="diet">
                 <h1>Discover Your Path to Wellness: Explore Our Diet Plans</h1>
-                <br />
                 <div className="diet-plan-list">
                     {dietPlans.map((dietPlan) => (
                         <DietItem key={dietPlan.id} {...dietPlan} />
