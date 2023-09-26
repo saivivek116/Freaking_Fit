@@ -9,6 +9,7 @@
 @import "partials/products";
 @import "partials/signup";
 @import "partials/footer";
+@import "partials/contactform";
 
 .home,
 .services,
