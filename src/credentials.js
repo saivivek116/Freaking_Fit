@@ -1,4 +1,4 @@
-const credentails = [
+let credentails = [
     {
         username: "user1@gmail.com",
         password: "pass1",
