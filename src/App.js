@@ -10,6 +10,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Community from "./pages/Community";
 import Diet from "./pages/Diet";
 import PrivateRoute from "./components/PrivateRoute";
+import Help from "./pages/Help";
 
 function App() {
     return (
@@ -45,6 +46,14 @@ function App() {
                         element={
                             <PrivateRoute>
                                 <Diet />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/help"
+                        element={
+                            <PrivateRoute>
+                                <Help />
                             </PrivateRoute>
                         }
                     />

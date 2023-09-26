@@ -105,6 +105,15 @@ function Navbar() {
                                 Community
                             </Link>
                         </li>
+                        <li className="nav-item">
+                            <Link
+                                to="/help"
+                                className="nav-links"
+                                onClick={closeMobileMenu}
+                            >
+                                Help
+                            </Link>
+                        </li>
                         {isLoggedIn ? (
                             <li>
                                 <a

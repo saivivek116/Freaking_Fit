@@ -50,7 +50,9 @@ const dietPlans = [
 function DietItem({ name, imageSrc, description }) {
     return (
         <li className="diet-plan-item">
+            {/* <div className="diet-image"> */}
             <img src={`images/${imageSrc}`} alt={name} />
+            {/* </div> */}
             <div className="diet-plan-info">
                 <h3>{name}</h3>
                 <p>{description}</p>
