@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link /*useLocation*/ } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
@@ -12,8 +12,8 @@ function Navbar() {
     // const [activeNav, setActiveNav] = useState("home");
 
     const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const location = useLocation();
-    const pathname = location.pathname;
+    // const location = useLocation();
+    // const pathname = location.pathname;
     // if (pathname === "/signin" || pathname === "/signup") {
     //     return null;
     // }
