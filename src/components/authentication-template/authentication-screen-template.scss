@@ -144,6 +144,7 @@
             .footer-container {
                 flex: 1;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 width: 80%;
 
@@ -225,6 +226,27 @@
             }
         }
     }
+}
+
+.password {
+    position: relative;
+}
+
+.authentication-page-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.error-message {
+    color: red;
+}
+
+.password-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    /* transform: translateY(-50%); */
+    cursor: pointer;
 }
 
 .signup-button {

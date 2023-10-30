@@ -10,8 +10,10 @@ import NotFound from "./pages/NotFound";
 import ForgotPassword from "./pages/ForgotPassword";
 import Community from "./pages/Community";
 import Diet from "./pages/Diet";
-import PrivateRoute from "./components/PrivateRoute";
+// import PrivateRoute from "./components/PrivateRoute";
 import Help from "./pages/Help";
+import { ToastContainer } from "react-toastify";
+// import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -53,15 +55,17 @@ function App() {
                     <Route
                         path="/help"
                         element={
-                            <PrivateRoute>
-                                <Help />
-                            </PrivateRoute>
+                            // <PrivateRoute>
+                            <Help />
+                            // </PrivateRoute>
                         }
                     />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
 	              <Footer />
             </BrowserRouter>
+            {/* <Footer /> */}
+            <ToastContainer />
         </div>
     );
 }
