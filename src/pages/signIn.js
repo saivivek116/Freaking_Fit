@@ -3,20 +3,21 @@ import React, { useEffect, useState } from "react";
 import TextInput from "../components/textbox/Textbox";
 import AuthenticationScreenTemplate from "../components/authentication-template/AuthenticationScreenTemplate";
 import { useNavigate } from "react-router-dom";
-import credentails from "../credentials";
 import Password from "../components/Password";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignIn = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [remember, setRemember] = useState(false);
-    const [error, setError] = useState({});
+    // const [error, setError] = useState({});
     const navigate = useNavigate();
 
-    const errors = {
-        uname: "Invalid Username",
-        pass: "Invalid Password",
-    };
+    // const errors = {
+    //     uname: "Invalid Username",
+    //     pass: "Invalid Password",
+    // };
 
     const rememberCredentials = () => {
         if (remember) {
@@ -28,23 +29,19 @@ const SignIn = (props) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         // Find user login info
-        console.log(credentails);
-        const userData = credentails.find((user) => user.username === email);
-        // Compare user info
-        if (userData) {
-            if (userData.password !== password) {
-                // Invalid password
-                setError({ name: "pass", message: errors.pass });
-            } else {
-                localStorage.setItem("isLoggedIn", true);
-                rememberCredentials();
-                alert("Login successful");
-                navigate("/");
-            }
-        } else {
-            // Username not found
-            setError({ name: "uname", message: errors.uname });
+        // console.log(credentails);
+        if (password.length <= 8) {
+            toast.error("Password should be atleast 8 characters long", {
+                position: toast.POSITION.BOTTOM_RIGHT,
+            });
+            return;
         }
+        localStorage.setItem("isLoggedIn", true);
+        rememberCredentials();
+        toast.success("Login Successful !", {
+            position: toast.POSITION.BOTTOM_RIGHT,
+        });
+        navigate("/");
     };
 
     useEffect(() => {
@@ -98,9 +95,9 @@ const SignIn = (props) => {
                     />
                     <span className="checkbox-text">Remember me</span>
                 </div>
-                {error.name || error.message ? (
+                {/* {error.name || error.message ? (
                     <div className="error-message">{error.message}</div>
-                ) : null}
+                ) : null} */}
                 <div>
                     <button className="signup-button" type="submit">
                         LOGIN
