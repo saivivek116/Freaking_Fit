@@ -26,7 +26,7 @@ function Cards() {
                             src="images/zones.webp"
                             text="Gym zones categorize workout areas for efficient use"
                             label="Zones"
-                            path="/workouts"
+                            path="/zones"
                         />
                         <CardItem
                             src="images/community.webp"
