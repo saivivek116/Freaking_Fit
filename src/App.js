@@ -13,6 +13,7 @@ import Diet from "./pages/Diet";
 // import PrivateRoute from "./components/PrivateRoute";
 import Help from "./pages/Help";
 import { ToastContainer } from "react-toastify";
+import Zones from "./pages/Zones";
 // import Footer from "./components/Footer";
 
 function App() {
@@ -33,6 +34,14 @@ function App() {
                         element={
                             // <PrivateRoute>
                             <Workout />
+                            // </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/zones"
+                        element={
+                            // <PrivateRoute>
+                            <Zones />
                             // </PrivateRoute>
                         }
                     />
@@ -62,7 +71,7 @@ function App() {
                     />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
-	              <Footer />
+                <Footer />
             </BrowserRouter>
             {/* <Footer /> */}
             <ToastContainer />

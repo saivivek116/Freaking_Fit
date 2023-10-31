@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TextInput from "../components/textbox/Textbox";
+import { toast } from "react-toastify";
 import AuthenticationScreenTemplate from "../components/authentication-template/AuthenticationScreenTemplate";
 
 const ForgotPassword = (props) => {
@@ -9,6 +10,10 @@ const ForgotPassword = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        toast.success("A password reset has been sent to your mail ", {
+            position: toast.POSITION.BOTTOM_RIGHT,
+        });
+        setEmail("");
     };
 
     return (
