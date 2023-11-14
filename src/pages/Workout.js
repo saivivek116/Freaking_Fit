@@ -4,11 +4,11 @@ import WorkoutList from "./WorkoutList";
 function Workouts() {
 	return (
 		<div className="workouts">
-			<h1 className="pt-5">Workouts</h1>
+			<h1 className="pt-1">Workouts</h1>
 			<div className="cards__container">
 				<div className="cards__wrapper">
 					<ul className="cards__items">
-						<WorkoutList src="images/workouts/chest.gif" text="Diverse chest exercises, like bench presses and push-ups, ensure comprehensive chest muscle development" label="Chest" path="/xhwar" />
+						<WorkoutList src="images/workouts/chest.gif" text="Diverse chest exercises, like bench presses and push-ups, ensure comprehensive chest muscle development" label="Chest" path="/chest" />
 						<WorkoutList src="images/workouts/triceps.gif" text="Incorporate tricep dips, skull crushers, and tricep pushdowns for a complete triceps workout routine." label="Triceps" path="/triceps" />
 						<WorkoutList src="images/workouts/lats.gif" text="Engage your back and lats with exercises like pull-ups, rows, and lat pulldowns for a balanced upper body workout." label="Back/Lats" path="/lats" />
 					</ul>
