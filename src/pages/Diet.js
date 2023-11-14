@@ -5,7 +5,7 @@ function Diet() {
 	return (
 		<>
 			<div className="cards">
-				<h1>Discover Your Path to Wellness: Explore Our Diet Plans</h1>
+				<h1 className="pt-1">Discover Your Path to Wellness: Explore Our Diet Plans</h1>
 				<div className="cards__container">
 					<div className="cards__wrapper">
 						<ul className="cards__items">
