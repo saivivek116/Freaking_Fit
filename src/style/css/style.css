@@ -91,7 +91,8 @@
 	flex: 1;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
-	/* justify-content: center; */
+	align-items: center;
+	justify-content: center;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -101,19 +102,8 @@
 }
 
 .navbar-logo {
-	color: #fff;
-	justify-self: start;
-	margin-left: 20px;
-	padding: 10px;
-	cursor: pointer;
-	text-decoration: none;
-	font-size: 2rem;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
+	max-width: 100%; /* Make the logo responsive */
+	height: auto;
 }
 
 .fa-map-marker-alt {
@@ -208,6 +198,14 @@
 }
 
 @media screen and (max-width: 960px) {
+	.navbar-container {
+		justify-content: space-between; /* Adjust alignment for smaller screens */
+	}
+
+	.logo-text {
+		display: none; /* Hide the text next to the logo on smaller screens */
+	}
+
 	.NavbarItems {
 		position: relative;
 	}
@@ -272,13 +270,7 @@
 		-webkit-transition: 250ms;
 		transition: 250ms;
 	}
-	.navbar-logo {
-		position: absolute;
-		top: 0;
-		left: 0;
-		-webkit-transform: translate(25%, 50%);
-		transform: translate(25%, 50%);
-	}
+
 	.menu-icon {
 		display: block;
 		position: absolute;
