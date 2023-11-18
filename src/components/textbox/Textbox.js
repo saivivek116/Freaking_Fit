@@ -24,7 +24,7 @@ const TextInput = (props) => {
             onChange={(event) => onChange(event?.target?.value)}
             onBlur={(event) => onBlur && onBlur(event?.target?.value)}
             onClick={() => onClick && onClick()}
-            delegate={delegate}
+            {...delegate}
         />
     );
 };

@@ -59,30 +59,38 @@ const SignIn = (props) => {
             </div>
             <form onSubmit={handleSubmit}>
                 <div className="textbox-container">
-                    <div>Email</div>
-                    <TextInput
-                        className="input-textbox"
-                        required={true}
-                        type="email"
-                        placeholder="username@email.com"
-                        onChange={(e) => {
-                            setEmail(e);
-                        }}
-                        value={email}
-                    />
+                    <label htmlFor="email">Email</label>
+                    <div className="input-container">
+                        <TextInput
+                            className="input-textbox"
+                            required={true}
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="username@email.com"
+                            onChange={(e) => {
+                                setEmail(e);
+                            }}
+                            value={email}
+                        />
+                    </div>
                 </div>
                 <div className="textbox-container">
-                    <div>Password</div>
-                    <Password
-                        className="input-textbox"
-                        required={true}
-                        type="password"
-                        placeholder="********"
-                        onChange={(e) => {
-                            setPassword(e);
-                        }}
-                        value={password}
-                    />
+                    <label htmlFor="password">Password</label>
+                    <div className="password input-container">
+                        <Password
+                            id="password"
+                            name="password"
+                            className="input-textbox"
+                            required={true}
+                            type="password"
+                            placeholder="********"
+                            onChange={(e) => {
+                                setPassword(e);
+                            }}
+                            value={password}
+                        />
+                    </div>
                 </div>
                 <div className="checkbox-container">
                     <input
