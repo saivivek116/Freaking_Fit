@@ -143,3 +143,17 @@
     color: #fff;
     margin-bottom: 16px;
 }
+
+.nav-item a.footer-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #2b3a42;
+}
+footer small {
+    color: #fff;
+    display: block;
+    text-align: center;
+    padding-bottom: 20px;
+}

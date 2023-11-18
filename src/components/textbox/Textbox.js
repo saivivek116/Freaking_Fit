@@ -10,6 +10,7 @@ const TextInput = (props) => {
         onChange,
         onBlur,
         onClick,
+        ...delegate
     } = props;
     return (
         <input
@@ -23,6 +24,7 @@ const TextInput = (props) => {
             onChange={(event) => onChange(event?.target?.value)}
             onBlur={(event) => onBlur && onBlur(event?.target?.value)}
             onClick={() => onClick && onClick()}
+            delegate={delegate}
         />
     );
 };

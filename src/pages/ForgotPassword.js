@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import TextInput from "../components/textbox/Textbox";
 import { toast } from "react-toastify";
 import AuthenticationScreenTemplate from "../components/authentication-template/AuthenticationScreenTemplate";
 
 const ForgotPassword = (props) => {
     const [email, setEmail] = useState("");
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        toast.success("A password reset has been sent to your mail ", {
-            position: toast.POSITION.BOTTOM_RIGHT,
-        });
+        toast.success(
+            "A link has been sent to your mail to reset your password.",
+            {
+                position: toast.POSITION.BOTTOM_RIGHT,
+            }
+        );
         setEmail("");
     };
 
@@ -35,6 +38,7 @@ const ForgotPassword = (props) => {
                         onChange={(e) => {
                             setEmail(e);
                         }}
+                        placeholder="username@gmail.com"
                         value={email}
                     />
                 </div>
@@ -44,18 +48,13 @@ const ForgotPassword = (props) => {
                         className="forgot-password-signup-button"
                         onClick={handleSubmit}
                     >
-                        Submit
+                        Send Email
                     </div>
                 </div>
 
-                <div
-                    className="forgot-password-footer-text"
-                    onClick={() => {
-                        navigate("/signin");
-                    }}
-                >
+                <Link to="/signin" className="button-link">
                     Back to Login
-                </div>
+                </Link>
             </div>
         </AuthenticationScreenTemplate>
     );

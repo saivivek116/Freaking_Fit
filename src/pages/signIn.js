@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import TextInput from "../components/textbox/Textbox";
 import AuthenticationScreenTemplate from "../components/authentication-template/AuthenticationScreenTemplate";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Password from "../components/Password";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,11 +13,6 @@ const SignIn = (props) => {
     const [remember, setRemember] = useState(false);
     // const [error, setError] = useState({});
     const navigate = useNavigate();
-
-    // const errors = {
-    //     uname: "Invalid Username",
-    //     pass: "Invalid Password",
-    // };
 
     const rememberCredentials = () => {
         if (remember) {
@@ -69,6 +64,7 @@ const SignIn = (props) => {
                         className="input-textbox"
                         required={true}
                         type="email"
+                        placeholder="username@email.com"
                         onChange={(e) => {
                             setEmail(e);
                         }}
@@ -81,6 +77,7 @@ const SignIn = (props) => {
                         className="input-textbox"
                         required={true}
                         type="password"
+                        placeholder="********"
                         onChange={(e) => {
                             setPassword(e);
                         }}
@@ -95,33 +92,24 @@ const SignIn = (props) => {
                     />
                     <span className="checkbox-text">Remember me</span>
                 </div>
-                {/* {error.name || error.message ? (
-                    <div className="error-message">{error.message}</div>
-                ) : null} */}
+
                 <div>
                     <button className="signup-button" type="submit">
-                        LOGIN
+                        Sign in
                     </button>
                 </div>
             </form>
             <div className="buttons-container">
                 <div className="item-button">
-                    <div
-                        className="footer-text"
-                        onClick={() => {
-                            navigate("/forget-password");
-                        }}
-                    >
+                    <Link to="/forget-password" className="button-link">
                         Forgot Password?
-                    </div>
-                    <div
-                        className="footer-text bold"
-                        onClick={() => {
-                            navigate("/signup");
-                        }}
-                    >
-                        Not a member yet? Sign up now!
-                    </div>
+                    </Link>
+                    <p className="footer-text bold">
+                        Not a member yet?{" "}
+                        <Link to="/signup" className="button-link">
+                            Sign up now!
+                        </Link>
+                    </p>
                 </div>
             </div>
         </AuthenticationScreenTemplate>

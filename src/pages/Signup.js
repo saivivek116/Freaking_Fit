@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AuthenticationScreenTemplate from "../components/authentication-template/AuthenticationScreenTemplate";
 import TextInput from "../components/textbox/Textbox";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import credentails from "../credentials";
 import Password from "../components/Password";
 
@@ -43,6 +43,7 @@ const Signup = (props) => {
                         onChange={(e) => {
                             setName(e);
                         }}
+                        placeholder="Example: John Doe"
                         value={name}
                     />
                 </div>
@@ -53,6 +54,7 @@ const Signup = (props) => {
                         className="input-textbox"
                         required={true}
                         type="email"
+                        placeholder="Example: John@gmail.com"
                         onChange={(e) => {
                             setEmail(e);
                         }}
@@ -96,14 +98,12 @@ const Signup = (props) => {
             </form>
             <div className="buttons-container">
                 <div className="item-button">
-                    <div
-                        className="footer-text bold"
-                        onClick={() => {
-                            navigate("/signin");
-                        }}
-                    >
-                        Already have an account? Sign in!
-                    </div>
+                    <p className="footer-text bold">
+                        Already have an account?{" "}
+                        <Link to="/signin" className="button-link">
+                            Sign in!
+                        </Link>
+                    </p>
                 </div>
             </div>
         </AuthenticationScreenTemplate>
