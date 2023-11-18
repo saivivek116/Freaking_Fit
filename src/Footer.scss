@@ -164,4 +164,13 @@ footer small {
     justify-content: center;
     gap: 2rem;
     margin-top: 16px;
+    .nav-item {
+        padding: 4px;
+        width: 24px;
+        height: 24px;
+        &:hover {
+            background-color: gray;
+            border-radius: 4px;
+        }
+    }
 }
