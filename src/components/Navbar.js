@@ -2,31 +2,46 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "../Navbar.scss";
+import {
+    faCircleQuestion,
+    faHouse,
+    faLocationDot,
+    faDumbbell,
+    faPeopleGroup,
+    faUtensils,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TABS = [
     {
         name: "Home",
         path: "/",
+        iconName: faHouse,
     },
     {
         name: "Workouts",
         path: "/workouts",
+        iconName: faDumbbell,
     },
     {
         name: "Zones",
         path: "/zones",
+        iconName: faLocationDot,
     },
     {
         name: "Diet",
         path: "/diet",
+        iconName: faUtensils,
     },
     {
         name: "Community",
         path: "/community",
+        iconName: faPeopleGroup,
     },
     {
         name: "Help",
         path: "/help",
+        iconName: faCircleQuestion,
     },
 ];
 
@@ -127,32 +142,29 @@ function Navbar() {
                                         handleNavChange(tab.name.toLowerCase())
                                     }
                                 >
-                                    {tab.name}
+                                    <FontAwesomeIcon icon={tab.iconName} />{" "}
+                                    {/* {tab.name} */}
                                 </Link>
                             </li>
                         ))}
-                        {isLoggedIn ? (
-                            <li>
-                                <a
-                                    onClick={logout}
-                                    className="nav-links"
-                                    href="/"
-                                >
-                                    Logout
-                                </a>
-                            </li>
-                        ) : (
-                            <li>
-                                <Link
-                                    to="/signin"
-                                    className="nav-links"
-                                    onClick={closeMobileMenu}
-                                >
-                                    Login
-                                </Link>
-                            </li>
-                        )}
                     </ul>
+                    {isLoggedIn ? (
+                        <>
+                            <a onClick={logout} className="nav-links" href="/">
+                                Logout
+                            </a>
+                        </>
+                    ) : (
+                        <>
+                            <Link
+                                to="/signin"
+                                className="nav-links"
+                                onClick={closeMobileMenu}
+                            >
+                                Login
+                            </Link>
+                        </>
+                    )}
                 </div>
             </nav>
         </>
