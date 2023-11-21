@@ -17,64 +17,61 @@ import Zones from "./pages/Zones";
 // import Footer from "./components/Footer";
 
 function App() {
-    return (
-        <div className="App">
-            <BrowserRouter>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/signin" element={<SignIn />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route
-                        path="/forget-password"
-                        element={<ForgotPassword />}
-                    />
-                    <Route
-                        path="/workouts"
-                        element={
-                            // <PrivateRoute>
-                            <Workout />
-                            // </PrivateRoute>
-                        }
-                    />
-                    <Route
-                        path="/zones"
-                        element={
-                            // <PrivateRoute>
-                            <Zones />
-                            // </PrivateRoute>
-                        }
-                    />
-                    <Route
-                        path="/community"
-                        element={
-                            // <PrivateRoute>
-                            <Community />
-                            // </PrivateRoute>
-                        }
-                    />
-                    <Route
-                        path="/diet"
-                        element={
-                            // <PrivateRoute>
-                            <Diet />
-                            // </PrivateRoute>
-                        }
-                    />
-                    <Route
-                        path="/help"
-                        element={
-                            // <PrivateRoute>
-                            <Help />
-                            // </PrivateRoute>
-                        }
-                    />
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
-                <Footer />
-            </BrowserRouter>
-            <ToastContainer />
-        </div>
-    );
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forget-password" element={<ForgotPassword />} />
+          <Route
+            path="/workouts"
+            element={
+              // <PrivateRoute>
+              <Workout />
+              // </PrivateRoute>
+            }
+          />
+          <Route
+            path="/zones"
+            element={
+              // <PrivateRoute>
+              <Zones />
+              // </PrivateRoute>
+            }
+          />
+          <Route
+            path="/community"
+            element={
+              // <PrivateRoute>
+              <Community />
+              // </PrivateRoute>
+            }
+          />
+          <Route
+            path="/diet"
+            element={
+              // <PrivateRoute>
+              <Diet />
+              // </PrivateRoute>
+            }
+          />
+          <Route
+            path="/help"
+            element={
+              // <PrivateRoute>
+              <Help />
+              // </PrivateRoute>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+      <ToastContainer />
+    </div>
+  );
 }
 export default App;
