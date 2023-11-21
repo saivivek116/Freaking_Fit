@@ -30,34 +30,34 @@ const ForgotPassword = (props) => {
                 <div className="forgot-password-sub-title">
                     We’ll send you a password reset link.
                 </div>
-
-                <div className="textbox-container">
-                    <label htmlFor="email">Email</label>
-                    <div className="input-container">
-                        <TextInput
-                            id="email"
-                            className="forgot-password-input-textbox"
-                            onChange={(e) => {
-                                setEmail(e);
-                            }}
-                            placeholder="username@gmail.com"
-                            value={email}
-                        />
+                <form onSubmit={handleSubmit}>
+                    <div className="textbox-container">
+                        <label htmlFor="email">Email</label>
+                        <div className="input-container">
+                            <TextInput
+                                id="email"
+                                className="forgot-password-input-textbox"
+                                onChange={(e) => {
+                                    setEmail(e);
+                                }}
+                                placeholder="username@gmail.com"
+                                value={email}
+                                required={true}
+                            />
+                        </div>
                     </div>
-                </div>
-
-                <div className="forgot-password-item-button">
-                    <div
-                        className="forgot-password-signup-button"
-                        onClick={handleSubmit}
-                    >
-                        Send Email
+                    <div className="forgot-password-item-button">
+                        <button
+                            type="submit"
+                            className="forgot-password-button forgot-password-signup-button"
+                        >
+                            Send Email
+                        </button>
                     </div>
-                </div>
-
-                <Link to="/signin" className="button-link">
-                    Back to Login
-                </Link>
+                    <Link to="/signin" className="button-link">
+                        Back to Login
+                    </Link>
+                </form>
             </div>
         </AuthenticationScreenTemplate>
     );

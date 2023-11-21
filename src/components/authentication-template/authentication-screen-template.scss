@@ -159,8 +159,10 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    align-items: center;
                     padding: 100px 25px;
+                    form .button-link {
+                        text-align: center;
+                    }
                 }
 
                 &-title-text {
@@ -191,7 +193,6 @@
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    width: 80%;
                     margin-bottom: 30px;
                 }
 
@@ -283,6 +284,7 @@ a.button-link:hover {
         margin-top: 12px;
         height: 40px;
         width: 100%;
+        padding: 0 8px;
     }
 }
 
