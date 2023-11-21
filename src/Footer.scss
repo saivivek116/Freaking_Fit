@@ -163,7 +163,6 @@ footer small {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    margin-top: 16px;
     .nav-item {
         padding: 4px;
         width: 24px;
@@ -172,5 +171,14 @@ footer small {
             background-color: gray;
             border-radius: 4px;
         }
+    }
+}
+
+.footer-column {
+    h3 {
+        margin-bottom: 16px;
+    }
+    .nav-item {
+        padding: 4px 0;
     }
 }
