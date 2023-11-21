@@ -76,20 +76,10 @@
                 flex-direction: column;
                 justify-content: center;
                 padding: 0 50px;
-                width: 80%;
+                // width: 80%;
 
                 @media (max-width: 1080px) {
                     padding: 0 25px;
-                }
-
-                .textbox-container {
-                    padding: 15px 0;
-
-                    .input-textbox {
-                        margin-top: 12px;
-                        height: 40px;
-                        width: 100%;
-                    }
                 }
 
                 .forgot-password {
@@ -103,7 +93,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                width: 80%;
+                // width: 80%;
 
                 @media (max-width: 1080px) {
                     width: 100%;
@@ -244,7 +234,7 @@
 
 .password-icon {
     position: absolute;
-    top: 50%;
+    top: 23px;
     right: 10px;
     /* transform: translateY(-50%); */
     cursor: pointer;
@@ -276,4 +266,38 @@ a.button-link {
 
 a.button-link:hover {
     text-decoration: underline;
+}
+
+.textbox-container {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    label {
+        flex: 1 1;
+    }
+    .input-container {
+        flex: 5 5;
+    }
+    .input-textbox {
+        margin-top: 12px;
+        height: 40px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .authentication-page-container
+        .right-container
+        .right-content-container
+        form
+        .textbox-container {
+        display: block;
+    }
+    .authentication-page-container .right-container .right-content-container {
+        .header-text-container,
+        form {
+            width: 100%;
+        }
+    }
 }

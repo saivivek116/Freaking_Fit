@@ -2,6 +2,12 @@ import React from "react";
 // import { Link } fr
 import "../Footer.scss";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faFacebook,
+    faInstagram,
+    faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
     return (
@@ -42,14 +48,14 @@ function Footer() {
                     </ul>
                 </div>
                 <div className="footer-column">
-                    <ul className="nav-list">
-                        <h3>Social Media</h3>
-                        <li className="nav-item pt-1">
+                    <h3>Social Media</h3>
+                    <ul className="nav-list social-media">
+                        <li className="nav-item">
                             <Link
                                 to="https://facebook.com"
                                 className="footer-link"
                             >
-                                Facebook
+                                <FontAwesomeIcon icon={faFacebook} />
                             </Link>
                         </li>
                         <li className="nav-item">
@@ -57,7 +63,7 @@ function Footer() {
                                 to="https://twitter.com"
                                 className="footer-link"
                             >
-                                Twitter
+                                <FontAwesomeIcon icon={faTwitter} />
                             </Link>
                         </li>
                         <li className="nav-item">
@@ -65,7 +71,7 @@ function Footer() {
                                 to="https://instagram.com"
                                 className="footer-link"
                             >
-                                Instagram
+                                <FontAwesomeIcon icon={faInstagram} />
                             </Link>
                         </li>
                     </ul>
