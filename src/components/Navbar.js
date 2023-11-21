@@ -56,25 +56,20 @@ const TABS = [
 		name: "Profile",
 		path: "/profile",
 		iconName: faUser,
+		isDropdown: true,
+		dropdownItems: [],
 	},
 ];
 
 function Navbar() {
 	const [click, setClick] = useState(false);
-	// const [button, setButton] = useState(true);
+	const navigate = useNavigate();
+	const [activeNav, setActiveNav] = useState("home");
+	const isLoggedIn = localStorage.getItem("isLoggedIn");
+	const location = useLocation();
 
 	const handleClick = () => setClick(!click);
 	const closeMobileMenu = () => setClick(false);
-	const navigate = useNavigate();
-
-	const [activeNav, setActiveNav] = useState("home");
-
-	const isLoggedIn = localStorage.getItem("isLoggedIn");
-	const location = useLocation();
-	// const pathname = location.pathname;
-	// if (pathname === "/signin" || pathname === "/signup") {
-	//     return null;
-	// }
 
 	const logout = async () => {
 		localStorage.removeItem("isLoggedIn");
@@ -87,11 +82,37 @@ function Navbar() {
 	};
 
 	useEffect(() => {
-		// Update the active nav based on the current path
 		const currentPath = location.pathname.substring(1);
-		// console.log(currentPath);
 		setActiveNav(currentPath);
 	}, [location]);
+
+	useEffect(() => {
+		const updateProfileDropdown = () => {
+			const profileTab = TABS.find((tab) => tab.name === "Profile");
+
+			if (profileTab) {
+				profileTab.dropdownItems = isLoggedIn
+					? [
+							{
+								name: "Logout",
+								onClick: logout,
+							},
+					  ]
+					: [
+							{
+								name: "SignIn",
+								path: "/signin",
+							},
+							{
+								name: "SignUp",
+								path: "/signup",
+							},
+					  ];
+			}
+		};
+
+		updateProfileDropdown();
+	});
 
 	return (
 		<>
@@ -100,7 +121,7 @@ function Navbar() {
 					<Link to="/">
 						<img src="/images/logo-fit.png" alt="Logo" className="navbar-logo" />
 					</Link>
-					<small className="logo-text">Freaking fit</small>
+					<small className="logo-text">Freaking Fit</small>
 
 					<div className="menu-icon" role="button" tabIndex="0" onClick={handleClick}>
 						{click ? (
@@ -129,25 +150,12 @@ function Navbar() {
 									</div>
 								) : (
 									<Link to={tab.path} className="nav-links" onClick={() => handleNavChange(tab.name.toLowerCase())}>
-										<FontAwesomeIcon icon={tab.iconName} /> {/* {tab.name} */}
+										<FontAwesomeIcon icon={tab.iconName} />
 									</Link>
 								)}
 							</li>
 						))}
 					</ul>
-					{isLoggedIn ? (
-						<>
-							<a onClick={logout} className="nav-links" href="/">
-								Logout
-							</a>
-						</>
-					) : (
-						<>
-							<Link to="/signin" className="nav-links" onClick={closeMobileMenu}>
-								Login
-							</Link>
-						</>
-					)}
 				</div>
 			</nav>
 		</>
