@@ -19,7 +19,13 @@ function Workouts() {
 					</ul>
 					<ul className="cards__items">
 						<WorkoutList src="images/workouts/abs.gif" text="Achieve toned abs through exercises like planks, crunches, and leg raises for a well-defined core." label="Abs" path="/abs" />
-						<WorkoutList src="images/workouts/yoga.gif" text="Experience inner peace and flexibility by embracing yoga, a practice that combines mindfulness, stretching, and deep breathing for holistic well-being." label="Yoga" path="/yoga" />
+						<WorkoutList
+							id="yoga"
+							src="images/workouts/yoga.gif"
+							text="Experience inner peace and flexibility by embracing yoga, a practice that combines mindfulness, stretching, and deep breathing for holistic well-being."
+							label="Yoga"
+							path="/yoga"
+						/>
 						<WorkoutList src="images/workouts/treadmill.gif" text="Cardio boosts heart health and weight management through activities like running and cycling that elevate your heart rate." label="Cardio" path="/cardio" />
 					</ul>
 				</div>
