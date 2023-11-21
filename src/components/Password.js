@@ -11,6 +11,7 @@ const Password = (props) => {
         onChange,
         onBlur,
         onClick,
+        ...delegate
     } = props;
     const [type, setType] = useState("password");
     const [icon, setIcon] = useState(faEye);
@@ -19,7 +20,7 @@ const Password = (props) => {
     };
 
     return (
-        <div className="password">
+        <>
             <input
                 value={value}
                 required={required}
@@ -31,6 +32,7 @@ const Password = (props) => {
                 onChange={(event) => onChange(event?.target?.value)}
                 onBlur={(event) => onBlur && onBlur(event?.target?.value)}
                 onClick={() => onClick && onClick()}
+                {...delegate}
             />
             {
                 <FontAwesomeIcon
@@ -43,7 +45,7 @@ const Password = (props) => {
                     }}
                 />
             }
-        </div>
+        </>
     );
 };
 

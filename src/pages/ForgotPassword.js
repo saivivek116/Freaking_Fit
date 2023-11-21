@@ -31,16 +31,19 @@ const ForgotPassword = (props) => {
                     We’ll send you a password reset link.
                 </div>
 
-                <div className="forgot-password-textbox-container">
-                    <div>Email</div>
-                    <TextInput
-                        className="forgot-password-input-textbox"
-                        onChange={(e) => {
-                            setEmail(e);
-                        }}
-                        placeholder="username@gmail.com"
-                        value={email}
-                    />
+                <div className="textbox-container">
+                    <label htmlFor="email">Email</label>
+                    <div className="input-container">
+                        <TextInput
+                            id="email"
+                            className="forgot-password-input-textbox"
+                            onChange={(e) => {
+                                setEmail(e);
+                            }}
+                            placeholder="username@gmail.com"
+                            value={email}
+                        />
+                    </div>
                 </div>
 
                 <div className="forgot-password-item-button">

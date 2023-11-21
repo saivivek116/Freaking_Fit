@@ -36,44 +36,51 @@ const Signup = (props) => {
             </div>
             <form onSubmit={handleSubmit}>
                 <div className="textbox-container">
-                    <div>Name</div>
-                    <TextInput
-                        className="input-textbox"
-                        required={true}
-                        onChange={(e) => {
-                            setName(e);
-                        }}
-                        placeholder="Example: John Doe"
-                        value={name}
-                    />
+                    <label htmlFor="username">Name</label>
+                    <div className="input-container">
+                        <TextInput
+                            className="input-textbox"
+                            required={true}
+                            onChange={(e) => {
+                                setName(e);
+                            }}
+                            placeholder="Example: John Doe"
+                            value={name}
+                            id="username"
+                        />
+                    </div>
                 </div>
 
                 <div className="textbox-container">
-                    <div>Email</div>
-                    <TextInput
-                        className="input-textbox"
-                        required={true}
-                        type="email"
-                        placeholder="Example: John@gmail.com"
-                        onChange={(e) => {
-                            setEmail(e);
-                        }}
-                        value={email}
-                    />
+                    <label htmlFor="email">Email</label>
+                    <div className="input-container">
+                        <TextInput
+                            className="input-textbox"
+                            id="email"
+                            required={true}
+                            type="email"
+                            placeholder="Example: John@gmail.com"
+                            onChange={(e) => {
+                                setEmail(e);
+                            }}
+                            value={email}
+                        />
+                    </div>
                 </div>
 
                 <div className="textbox-container">
-                    <div>Password</div>
-                    <Password
-                        className="input-textbox"
-                        type="password"
-                        required={true}
-                        onChange={(e) => {
-                            setPassword(e);
-                        }}
-                        value={password}
-                    />
-                    <div>
+                    <label htmlFor="password">Password</label>
+                    <div className="password input-container">
+                        <Password
+                            className="input-textbox"
+                            type="password"
+                            id="password"
+                            required={true}
+                            onChange={(e) => {
+                                setPassword(e);
+                            }}
+                            value={password}
+                        />
                         <small>
                             Password should atleast contain 8 characters
                         </small>
@@ -81,16 +88,19 @@ const Signup = (props) => {
                 </div>
 
                 <div className="textbox-container">
-                    <div>Confirm Password</div>
-                    <Password
-                        className="input-textbox"
-                        required={true}
-                        type="password"
-                        onChange={(e) => {
-                            setConfirmPassword(e);
-                        }}
-                        value={confirmPassword}
-                    />
+                    <label htmlFor="confirmPassword">Confirm Password</label>
+                    <div className="password input-container">
+                        <Password
+                            id="confirmPassword"
+                            className="input-textbox"
+                            required={true}
+                            type="password"
+                            onChange={(e) => {
+                                setConfirmPassword(e);
+                            }}
+                            value={confirmPassword}
+                        />
+                    </div>
                 </div>
                 <button className="signup-button" type="submit">
                     Sign Up
